@@ -1,0 +1,39 @@
+﻿@model List<Group>;
+@{
+	ViewData["Title"] = "Medicine Group";
+}
+@if (Model != null && Model.Count() > 0)
+{
+	<table class="table border-secondary">
+		<thead>
+			<tr>
+				<th>Group Name</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var group in Model)
+			{
+				<tr>
+					<td>
+						@group.Name
+					</td>
+					<td>
+						<a class="btn btn-link" asp-controller="Group" asp-action="Edit" asp-route-id="@group.GroupId">Edit</a>
+						<a class="btn btn-link" asp-controller="Group" asp-action="Delete" asp-route-id="@group.GroupId" onclick="return ConfirmDelete()">Delete</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+else
+{
+	<h2 class="text-center text-danger">No Data Found!</h2>
+}
+<a class="btn btn-primary" asp-controller="Group" asp-action="Add">Add Group</a>
+<script>
+	function ConfirmDelete(){
+		return confirm("Are you sure you want to Delete this?");
+	}
+</script>

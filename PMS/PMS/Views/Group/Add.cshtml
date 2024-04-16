@@ -1,0 +1,29 @@
+﻿@model Group
+@{
+	ViewData["Title"] = "Add Group";
+}
+<div class="card card-body">
+	<h1 class="card-header">
+		Add Medicine Group
+	</h1>
+	<form class="card-body" method="post" asp-controller="Group" asp-action="Add">
+		@if (ViewBag.isSuccess == true)
+		{
+			<div class="alert alert-success alert-dismissible fade show my-2" role="alert">
+				Medicine Group Added Successfully.
+				<a class="alert-link" asp-controller="Group" asp-action="Index">Click here!</a> to view Groups.
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		}
+		<div class="row">
+			<div class="col-md-6">
+				<label asp-for="Name">
+					Medicine Group Name:
+				</label>
+				<input class="form-control my-2" asp-for="Name" />
+				<span class="text-danger" asp-validation-for="Name"></span>
+			</div>
+		</div>
+		<input type="submit" class="btn btn-primary my-2" value="Add" />
+	</form>
+</div>
