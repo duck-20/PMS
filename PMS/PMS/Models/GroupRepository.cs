@@ -4,15 +4,26 @@
 	{
 		private static List<Group> _groups = new List<Group>() 
 		{
-			new Group { GroupId = 1,Name="Diabetes"},
-			new Group { GroupId = 2,Name="Generic Medicine"},
-			new Group { GroupId = 3,Name="Pressure"},
-			new Group { GroupId = 4,Name="Kidney"},
+			new Group { GroupId = 1,Name="Tablet"},
+			new Group { GroupId = 2,Name="Powder"},
+			new Group { GroupId = 3,Name="Syrup"},
+			new Group { GroupId = 4,Name="Capsule"},
 		};
 		public static void AddGroup(Group group)
 		{
-			var maxId=_groups.Max(g => g.GroupId);
-			maxId = maxId + 1;
+			if (_groups != null && _groups.Count()>0 ) 
+			{
+				var maxId = _groups.Max(g => g.GroupId);
+				maxId = maxId + 1;
+			}
+			else
+			{
+				group.GroupId = 1;
+			}
+			if( _groups == null ) 
+			{
+				_groups=new List<Group>();
+			}
 			_groups.Add(group);
 		}
 		public static List<Group> GetGroups()=>_groups;

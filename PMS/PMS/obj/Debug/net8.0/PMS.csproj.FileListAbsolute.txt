@@ -28,3 +28,4 @@ C:\Users\pakhr\OneDrive\Desktop\PharmacyInventorySystem\PMS\PMS\obj\Debug\net8.0
 C:\Users\pakhr\OneDrive\Desktop\PharmacyInventorySystem\PMS\PMS\obj\Debug\net8.0\PMS.pdb
 C:\Users\pakhr\OneDrive\Desktop\PharmacyInventorySystem\PMS\PMS\obj\Debug\net8.0\PMS.genruntimeconfig.cache
 C:\Users\pakhr\OneDrive\Desktop\PharmacyInventorySystem\PMS\PMS\obj\Debug\net8.0\ref\PMS.dll
+C:\Users\pakhr\OneDrive\Desktop\PharmacyInventorySystem\PMS\PMS\obj\Debug\net8.0\PMS.sourcelink.json

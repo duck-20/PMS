@@ -1,0 +1,41 @@
+﻿@model Medicine
+@{
+	ViewData["Title"] = "Medicine Details";
+}
+@section title{
+	<h3>
+		@Model.Name Details
+	</h3>
+    <hr />
+}
+<div class=" card card-body">
+
+<dl class="row">
+    <dt class="col-sm-3">Medicine name:</dt>
+    <dd class="col-sm-9"><p>@Model.Name</p></dd>
+    
+    <dt class="col-sm-3">Medicine Group:</dt>
+    <dd class="col-sm-9"><p>@Model.Group?.Name</p></dd>
+
+    <dt class="col-sm-3">Price:</dt>
+    <dd class="col-sm-9">
+        <p>@Model.Price</p>
+    </dd>
+    <dt class="col-sm-3">Quantity:</dt>
+    <dd class="col-sm-9"><p>@Model.Quantity</p></dd>
+
+    <dt class="col-sm-3 text-truncate">Expiry Date:</dt>
+    <dd class="col-sm-9"><p>@Model.ExpiryDate</p></dd>
+
+    <dt class="col-sm-3 text-truncate">Description:</dt>
+    <dd class="col-sm-9"><p>@Model.Description</p></dd> 
+</dl>
+</div>
+    <a class="btn btn-success py-2 px-4 m-4" asp-controller="Medicine" asp-action="Edit" asp-route-id="@Model.MedicineId">Edit</a>
+    <a class="btn btn-danger py-2" asp-controller="Medicine" asp-action="Delete" asp-route-id="@Model.MedicineId" onclick="return ConfirmDelete()">Delete</a>
+
+<script>
+    function ConfirmDelete() {
+        return confirm("Are you sure you want to delete this?");
+    }
+</script>
